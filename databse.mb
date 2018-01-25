@@ -1,0 +1,66 @@
+Users:
+1. student
+2. teacher
+3. managing director
+4. operator
+5. Head Teacher
+
+common:
+1. can see his/her profile,
+2. edit, update profile
+3. see notifications
+
+student:
+1. common
+2. see result
+
+teacher:
+1. common
+2. publish results
+
+Managing director, Head Teacher:
+1. common
+2. See all classes result
+3. Post Job
+
+Tables:
+1. Users
+2. Profile
+3. Schools
+4. School Addresses
+5. Images
+6. Result
+7. Notifications
+8. Classes
+
+Relationships
+Student:
+student belongs to a school
+student belongs to a class
+school has many classes
+class morphToMany students
+
+school has many teachers
+school belongs to a head teacher
+school bolongs to a managing director
+school has a address
+
+school morphToMany ProfileImages
+school morphToMany CoverPhotos
+school morphToMany GallaryImages
+school morphpToMany Videos
+school morphToMany Teachers
+
+Student:
+name, class, roll_no, profile_pic, blood_group, phone_no, 
+
+
+
+
+
+
+
+
+
+
+
