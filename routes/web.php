@@ -1,16 +1,35 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\District;
+use App\Division;
+use App\PostOffice;
+use App\Upazila;
+use App\Village;
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $district = new District;
+
+    $district->name = "Jhalokati";
+    $district->division()->associate(1);
+    
+    $district->save();
+
+    $data = new Upazila;
+
+    $data->name = "Kathalia";
+    $data->district()->associate(1);
+    
+    $data->save();
+
+
+     $data = new PostOffice;
+
+    $data->name = "Amua";
+    $data->code = 8431;
+    $data->upazila()->associate(1);
+    
+    $data->save();
+
+
 });

@@ -52,7 +52,7 @@ school morphpToMany Videos
 school morphToMany Teachers
 
 Student:
-name, class, roll_no, profile_pic, blood_group, phone_no, 
+name, class, roll_no, profile_pic, blood_group, phone_no, section, 
 
 
 
