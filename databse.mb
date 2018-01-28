@@ -55,6 +55,121 @@ Student:
 name, class, roll_no, profile_pic, blood_group, phone_no, section, 
 
 
+// $division = new Division;
+    // $division->name = "Barisal";
+    // $division->slug = "barisal";    
+    // $division->save();
+
+    // $district = new District;
+    // $district->name = "Jhalokati";
+    // $district->slug = "jhalokati";
+    // $district->division()->associate(1);    
+    // $district->save();
+
+    // $data = new Upazila;
+    // $data->name = "Kathalia";
+    // $data->slug = "kathalia";
+    // $data->district()->associate(1);    
+    // $data->save();
+
+    // $data = new PostOffice;
+    // $data->name = "Amua";
+    // $data->slug = "amua";
+    // $data->code = '8431';
+    // $data->upazila()->associate(1);    
+    // $data->save();
+
+    // $data = new Village;
+    // $data->name = "Banshbunia";
+    // $data->slug = "banshbunia";
+    // $data->post_office()->associate(1);
+    // $data->upazila()->associate(1);
+    // $data->save();
+
+    // $data = new InstituteType;
+    // $data->name = "Primary";
+    // $data->slug = "primary";
+    // $data->save();
+
+    // $data = new InstituteType;
+    // $data->name = "College";
+    // $data->slug = "college";
+    // $data->save();
+
+    // $data = new InstituteFor;
+    // $data->name = "Girls";
+    // $data->slug = "girls";
+    // $data->save();
+
+    // $data = new OwnerType;
+    // $data->name = "Private";
+    // $data->slug = "private";
+    // $data->save();
+
+    // $data = new InstituteFor;
+    // $data->name = "Boys";
+    // $data->slug = "boys";
+    // $data->save();
+
+    // $data = new OwnerType;
+    // $data->name = "Half Govment";
+    // $data->slug = "half-govment";
+    // $data->save();
+
+    // $upazila = Upazila::find(1);
+    // //dd($upazila->villages);
+
+    // $data = new Institute;
+    // $data->name = "31st Boisnober Hawla Gov Primary School";
+    // $data->slug = "31st-no-boisnober-hawla-gov-primay-school";
+    // $data->institute_type()->associate(2);
+    // $data->institute_for()->associate(1);
+    // $data->owner_type()->associate(2);
+    // $data->village()->associate(1);
+    // $data->code = '4567';
+    // $data->location = 'location2';
+    // $data->save();
+
+    // $type = InstituteType::find(1);   
+    // $for = InstituteFor::find(1);
+    // $institutes  = $for->institutes;
+    // dump($institutes[0]->name);
+    // $village =$institutes[0]->village;
+    // dump($village->name);
+    // $upazila = $village->upazila;
+    // dump($upazila->name);
+    // $district = $upazila->district;
+    // dump($district->name);
+
+    // $Institute = Institute::with(['institute_type', 'institute_for', 'owner_type', 'village','village.upazila','village.upazila.district'])->find(1);
+    // dd($Institute);
+
+
+
+    Reteriving Polymorpic Realation
+
+        $institute = Institute::find(1);
+    $avatures = $institute->avaters;
+
+   $a = $avatures->firstWhere('type', 'logo');
+   if($a)
+   {
+    return $a->src;
+   }
+
+    $filtered = $avatures->filter(function ($value, $key) {
+    return $value->type === 'background';
+});
+    //dd($filtered );
+    $backgrounds =  $institute->avaters->where('type', 'background')->first();
+    dd($backgrounds);
+    
+    foreach ($backgrounds as $avater) {
+            //dump($avater->imageable);
+            dump($avater->src);
+    }
+
+
 
 
 

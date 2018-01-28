@@ -34,6 +34,11 @@ class Institute extends Model
 	public function village()
 	{
 		return $this->belongsTo(Village::class);
+	}	
+
+	public function avaters()
+	{
+		return $this->morphMany('App\Image', 'imageable');
 	}
 
 }
