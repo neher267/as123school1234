@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Upazila extends Model
 {
-    	use SoftDeletes;
+    use SoftDeletes;
 	/**
 	 * The attributes that should be mutated to dates.
 	 *
@@ -30,6 +30,11 @@ class Upazila extends Model
 
 	public function post_offices()
 	{
-		$this->hasMany(PostOffice::class);
+		return $this->hasMany(PostOffice::class);
+	}
+
+	public function villages()
+	{
+		return $this->hasMany(Village::class);
 	}
 }

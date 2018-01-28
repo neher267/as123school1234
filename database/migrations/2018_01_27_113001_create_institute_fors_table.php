@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVillagesTable extends Migration
+class CreateInstituteForsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class CreateVillagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('villages', function (Blueprint $table) {
+        Schema::create('institutes_for', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 50);
-            $table->string('slug', 30)->unique();
-            $table->integer('upazila_id')->unsigned();
-            $table->integer('post_office_id')->unsigned();
+            $table->string('name');
+            $table->string('slug')->unique();
             $table->softDeletes();
             $table->timestamps();
-            $table->foreign('post_office_id')->references('id')->on('post_offices')->onDelete('cascade');
         });
     }
 
@@ -32,6 +29,6 @@ class CreateVillagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('villages');
+        Schema::dropIfExists('institute_fors');
     }
 }
