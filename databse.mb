@@ -33,6 +33,69 @@ Tables:
 7. Notifications
 8. Classes
 
+Useres:
+
+id   first_name     last_name   role    mobile     gender_id   religion_id
+
+branches:
+id      istitute_id     name
+
+addresses: //institute id for student
+id addressable_id      addressable_type(user, institute, branches)     village_id   post_office_id     local_guardian(boolean, default-false)    permanent(boolean, default-true)      deleted_at
+
+contacts:
+id      contactable_id      contactable_type(user, institute, branches)    name(mobile, telepone, email, website)      value(unique)   deleted_at 
+
+pinpoint_addresses:
+id      pointable_id     pointable_type(user, institue, branches)  block      road_no      house_no        house_name      floor   
+
+
+student_info:
+id      user_id     class_id     father_name      mother_name     guardian_mobile     relation   local_guardian(boolean)
+
+local_guardian:
+id      user_id     guardian_name   guardian_mobile     relation
+
+
+classes:
+id      name    
+
+user_class:
+user_id     class_id 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Relationships
 Student:
 student belongs to a school
