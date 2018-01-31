@@ -50,7 +50,13 @@ Tables:
 
 Useres:
 
-id   first_name     last_name   role    mobile     gender_id   religion_id //student er khetre mobile = gaurgian_mobile
+id  first_name     last_name   role     gender_id   religion_id     user_name   password
+//user_name: login name | unique
+    teacher: mobile_no+33
+    student: guardian_mobile_no+1,2,3---
+    guest-student:mobile
+    moderator:mobile+22
+//student er khetre mobile = gaurgian_mobile
 
 branches:
 id      istitute_id     name    slug
