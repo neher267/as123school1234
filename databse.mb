@@ -33,21 +33,6 @@ Tables:
 7. Notifications
 8. Classes
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Useres:
 
 id  first_name     last_name   role     gender_id   religion_id     user_name   password
@@ -84,6 +69,28 @@ id      name    slug
 
 user_class:
 user_id     class_id 
+
+
+Question Module:
+
+questions:
+id      questionable_id     questionable_type(board, institute, custome)       type (multiple, hard)  class(psc, ssc, jsc, hsc, bsc) 
+
+ set    question       level-1,2..easy, medium ...  
+ subject        year      marks   sloving_time(null_able)
+
+solves: 1 ta qsn er onek rokom solution thakte pare
+id      question_id        user_id
+
+options:
+id     question_id      key(a,b..,1,2,..,ক,খ.., ans)      value 
+
+
+
+
+
+
+
 
 
 
