@@ -23,15 +23,7 @@ Managing director, Head Teacher:
 2. See all classes result
 3. Post Job
 
-Tables:
-1. Users
-2. Profile
-3. Schools
-4. School Addresses
-5. Images
-6. Result
-7. Notifications
-8. Classes
+
 
 Useres:
 
@@ -42,6 +34,10 @@ id  first_name     last_name   role     gender_id   religion_id     user_name   
     guest-student:mobile
     moderator:mobile+22
 //student er khetre mobile = gaurgian_mobile
+
+user_institute 
+
+id      user_id     institute_id  
 
 branches:
 id      istitute_id     name    slug
@@ -60,7 +56,8 @@ id      pointable_id     pointable_type(user, institue, branches, guardian)  add
 student_info:
 id      user_id     class_id     father_name      mother_name
 
-guardian
+
+guardian:
 user_id     name         relation      institute_id     local_guardian(boolean-default false) //a student may have same local guardian for diffrent institute. institute_id coma seperate Ex, 1,2,3,4 
 
 
