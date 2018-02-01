@@ -35,9 +35,28 @@ id  first_name     last_name   role     gender_id   religion_id     user_name   
     moderator:mobile+22
 //student er khetre mobile = gaurgian_mobile
 
-user_institute 
 
-id      user_id     institute_id  
+
+user_institute(teacher, pion, moderator...)
+id  user_id     institute_id    joined_year     leave_year(nullbale) //query lastest()
+
+
+
+student_status
+
+id      user_id   class_id  institute_id    batch_no(nullable)  roll_no      section(nullable)   group_id(science, arts,co ..,all)     year  
+
+student_info:
+id      user_id    father_name      mother_name
+
+student_result
+student_status_id    subject_id   exam_type_id    subject     marks 
+
+exam_types:
+id  class_id    institue_id(nullable)     name    pass_mark    total_marks //institue create korbe
+
+subjects:
+id    institute_id(nulable)  class_id  name    slug          
 
 branches:
 id      istitute_id     name    slug
@@ -53,20 +72,12 @@ pinpoint_addresses:
 id      pointable_id     pointable_type(user, institue, branches, guardian)  address_id       block      road_no      house_no        house_name      floor   
 
 
-student_info:
-id      user_id     class_id     father_name      mother_name
-
-
 guardian:
 user_id     name         relation      institute_id     local_guardian(boolean-default false) //a student may have same local guardian for diffrent institute. institute_id coma seperate Ex, 1,2,3,4 
 
 
 classes:
 id      name    slug
-
-user_class:
-user_id     class_id 
-
 
 Question Module:
 
@@ -81,45 +92,6 @@ id      question_id        user_id
 
 options:
 id     question_id      key(a,b..,1,2,..,ক,খ.., ans)      value 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 Relationships
