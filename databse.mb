@@ -46,11 +46,14 @@ student_status
 
 id      user_id   class_id  institute_id    batch_no(nullable)  roll_no      section(nullable)   group_id(science, arts,co ..,all)     year  
 
+attendence:
+student_status_id subject_id  date
+
 student_info:
 id      user_id    father_name      mother_name
 
 student_result
-student_status_id    subject_id   exam_type_id    subject     marks 
+student_status_id    subject_id   exam_type_id     marks 
 
 exam_types:
 id  class_id    institue_id(nullable)     name    pass_mark    total_marks //institue create korbe
